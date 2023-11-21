@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ใช้งาน Grid-template-areas</title>
+    <style>
+        .item-H {
+            grid-area: header;
+            height: 70px;
+            position: relative;
+        }
+
+        .item-H img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-L {
+            grid-area: lside;
+            height: 420px;
+        }
+
+        .item-M {
+            grid-area: main;
+            display: flex; /* Use flex container */
+            justify-content: center; /* Center children horizontally */
+            align-items: center; /* Center children vertically */
+        }
+
+        .item-F {
+            grid-area: footer;
+            height: auto;
+        }
+
+        .gridcontainer {
+            display: grid;
+            grid-template-areas:
+            'header header header header header'
+            'lside main main main main'
+            'footer footer footer footer footer';
+            background-color: lemonchiffon;
+            grid-gap: 5px;
+            padding: 10px;
+        }
+
+            .item{
+              background-color: bisque;
+              border:2px solid lightpink; 
+              padding:30px; 
+              font-size: 20px;
+              text-align: center; 
+        }
+    </style>
+</head>
+<body style="padding: 0;">
+    <div class="gridcontainer">
+        <div class="item-H">
+            <img src="./images/Logo.jpg" class="logo" alt="logo">
+        </div>
+        <div class="item-L item">
+            <a href="index.html" style="font-size: 30px;">index</a>
+        </div>
+
+        <div class="item-M item">
+            <form action="http://httpbin.org/post" method="post" style="text-align: start;background-color:#ffff;padding: 20px;border-radius: 10px;">
+            
+                <label for="nname">ชื่อ-สกุล:</label>
+                <input type="text" id="nname" name="FLname"><br><br>
+    
+                <label for="gender">เพศ:</label>
+                <select id="gender" name="gender">
+                    <option value="male">ชาย</option>
+                    <option value="female">หญิง</option>
+                    <option value="other">อื่น ๆ</option>
+                </select><br><br>
+    
+                <label for="date">วันที่เกิด:</label>
+                <input type="date" id="date" name="date"><br><br>
+    
+                <label for="phone">เบอร์โทรศัพท์:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+                
+                <label for="mail">e-mail:</label>
+                <input type="email" id="mail" name="email"><br><br>
+    
+                <button type="submit" style="width: 70%; margin-left: auto;">สร้างบัญชี</button>
+            </form>
+            
+        </div>
+
+        <div class="item-F">
+            <address style="text-align: start;">
+                <p>ที่อยู่ 9 ถ.พหลโยธิน ตำบล คลองหนึ่ง อำเภอคลองหลวง ปทุมธานี 12120</p>
+                <p>Tel : 097 977 9777</p>
+                <p>Email : pclub@gmail.com</p>
+            </address>
+        </div>
+    </div>
+</body>
+</html>

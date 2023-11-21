@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ใช้งาน Grid-template-areas</title>
+    <style>
+        .item-H {
+            grid-area: header;
+            height: 70px;
+            position: relative;
+        }
+
+        .item-H img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-L {
+            grid-area: lside;
+            height: 420px;
+        }
+
+        .item-M {
+            grid-area: main;
+            display: flex; /* Use flex container */
+            justify-content: center; /* Center children horizontally */
+            align-items: center; /* Center children vertically */
+        }
+
+        .item-F {
+            grid-area: footer;
+            height: auto;
+        }
+
+        .gridcontainer {
+            display: grid;
+            grid-template-areas:
+            'header header header header header'
+            'lside main main main main'
+            'footer footer footer footer footer';
+            background-color: lemonchiffon;
+            grid-gap: 5px;
+            padding: 10px;
+        }
+
+        .item{
+              background-color: bisque;
+              border:2px solid lightpink; 
+              padding:30px; 
+              font-size: 20px;
+              text-align: center; 
+        }
+    </style>
+</head>
+<body style="padding: 0;">
+    <div class="gridcontainer">
+        <div class="item-H">
+            <img src="./images/Logo.jpg" class="logo" alt="logo">
+        </div>
+        <div class="item-L item">
+            <a href="register.html" style="font-size: 30px;">register</a>
+        </div>
+
+        <div class="item-M item">
+            <form action="http://httpbin.org/post" method="post">
+                <div style="display: flex;overflow-y:scroll;width: 70vw;">
+                    <div class="box">
+                        <img src="./images/โค้ก.jpeg" class="logo" alt="logo"  style="max-width: 200px;">
+                    <p>โค้ก</p>
+                    <input type="number" name="โค้ก" placeholder="ระบุจำนวน">
+                </div>
+                <div class="box">
+                    <img src="./images/ช็อกโกเลต.jpeg" class="logo" alt="logo"  style="max-width: 200px;">
+                    <p>ช็อกโกเลต</p>
+                    <input type="number" name="ช็อกโกเลต" placeholder="ระบุจำนวน">
+                </div>
+                <div class="box">
+                    <img src="./images/น้ำเปล่า.jpeg" class="logo" alt="logo"  style="max-width: 200px;">
+                    <p>น้ำเปล่า</p>
+                    <input type="number" name="น้ำเปล่า" placeholder="ระบุจำนวน">
+                </div>
+                <div class="box">
+                    <img src="./images/เยลลี่.jpeg" class="logo" alt="logo"  style="max-width: 200px;">
+                    <p>เยลลี่</p>
+                    <input type="number" name="เยลลี่" placeholder="ระบุจำนวน">
+                </div>
+                <div class="box">
+                    <img src="./images/เลย์.jpeg" class="logo" alt="logo"  style="max-width: 200px;">
+                    <p>เลย์</p>
+                    <input type="number" name="เลย์" placeholder="ระบุจำนวน">
+                </div>
+                <div class="box">
+                    <img src="./images/สตอร์เบอรี่.jpeg" class="logo" alt="logo"  style="max-width: 200px;">
+                    <p>สตอร์เบอรี่</p>
+                    <input type="number" name="สตอร์เบอรี่" placeholder="ระบุจำนวน">
+                </div>
+                </div>
+    
+                <button type="submit" style="width: 70%; margin-left: auto;">ซื้อ</button>
+            </form>
+        </div>
+        
+        <div class="item-F">
+            <address style="text-align: start;">
+                <p>ที่อยู่ 9 ถ.พหลโยธิน ตำบล คลองหนึ่ง อำเภอคลองหลวง ปทุมธานี 12120</p>
+                <p>Tel : 097 977 9777</p>
+                <p>Email : pclub@gmail.com</p>
+            </address>
+        </div>
+    </div>
+</body>
+</html>
